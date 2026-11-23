@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "title": "PyPI 工作流",
+    "description": "查询 PyPI 包与版本、用内置零依赖上传器发布发行包、校验包名占用，并在设置里管理账号凭证与我的项目。"
+  },
+  "panel": {
+    "title": "PyPI 工作流",
+    "accountSection": "账号绑定",
+    "projectsSection": "我的项目",
+    "lookupSection": "包查询",
+    "username": "PyPI 用户名",
+    "token": "API 令牌",
+    "tokenPlaceholder": "pypi-AgEIcHlwaS5vcmc...",
+    "save": "保存",
+    "clear": "清除令牌",
+    "test": "验证连接",
+    "add": "添加",
+    "remove": "移除",
+    "refresh": "刷新",
+    "lookup": "查询",
+    "configured": "已配置",
+    "notConfigured": "未配置",
+    "saved": "已保存",
+    "hintToken": "令牌只写入本机 DSH 凭据库（$DSH_HOME/.credentials.yaml），不会出现在配置或对话里。",
+    "hintTokenScope": "建议在 pypi.org「Account settings → API tokens」创建项目范围（Scope）令牌，而不是全账号令牌。",
+    "emptyProjects": "还没有追踪的项目。发布成功后会自动加入，也可以在下面手动添加。",
+    "unverified": "未验证：PyPI 令牌只对上传接口生效，无法离线校验；首次发布会给出真实结果。"
+  }
+}

@@ -1,0 +1,15 @@
+# dsh-pypi-flow bundle patch: inserts the plugin row into the profile roster.
+# Applied as a profile bundle layer (declared by the `dsh.bundle.patch`
+# manifest field in package.json). Activate with:
+#
+#   # local development (link)
+#   dsh plugin --profile web add link:/path/to/dsh-pypi-flow
+#   # from GitHub (repo tagged with the `dsh-plugin` topic)
+#   dsh plugin --profile web add github:zhang1024899756/dsh-pypi-flow
+- insert:
+    - id: pypi-flow
+      name: dsh-pypi-flow
+      config:
+        announceToAgent: true   # 在系统提示中公告插件（工具 + 能力边界）
+        enabled: true           # 插件总开关
+        defaultRepository: pypi # 默认目标仓库：pypi | testpypi

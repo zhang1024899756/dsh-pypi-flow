@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="PyPI workflow">
+  <defs>
+    <linearGradient id="pypiFlowBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4E96C8"/>
+      <stop offset="1" stop-color="#27587E"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#pypiFlowBg)"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 31.5 L32 25 L45 31.5 L45 47 L19 47 Z"/>
+    <path d="M19 31.5 L32 38 L45 31.5"/>
+    <path d="M32 38 L32 47"/>
+    <path d="M32 21 L32 9"/>
+    <path d="M26.5 14.5 L32 9 L37.5 14.5"/>
+  </g>
+</svg>

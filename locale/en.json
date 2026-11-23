@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "title": "PyPI workflow",
+    "description": "Query PyPI packages and releases, publish distributions with the built-in zero-dependency uploader, check name availability, and manage account credentials and tracked projects in settings."
+  },
+  "panel": {
+    "title": "PyPI workflow",
+    "accountSection": "Account binding",
+    "projectsSection": "My projects",
+    "lookupSection": "Package lookup",
+    "username": "PyPI username",
+    "token": "API token",
+    "tokenPlaceholder": "pypi-AgEIcHlwaS5vcmc...",
+    "save": "Save",
+    "clear": "Clear token",
+    "test": "Test connection",
+    "add": "Add",
+    "remove": "Remove",
+    "refresh": "Refresh",
+    "lookup": "Look up",
+    "configured": "Configured",
+    "notConfigured": "Not configured",
+    "saved": "Saved",
+    "hintToken": "The token is written only to the local DSH credential store ($DSH_HOME/.credentials.yaml) and never appears in configuration or in the conversation.",
+    "hintTokenScope": "Prefer a project-scoped token from pypi.org \"Account settings -> API tokens\" over an account-wide token.",
+    "emptyProjects": "No tracked projects yet. Publishing adds one automatically, or add one manually below.",
+    "unverified": "Unverified: a PyPI token only works against the upload API, so it cannot be checked offline; the first publish returns the real result."
+  }
+}
