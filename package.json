@@ -1,6 +1,6 @@
 {
   "name": "dsh-pypi-flow",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "PyPI workflow for DeepSeek Harness: query packages and releases, publish distributions with a built-in zero-dependency uploader, verify names, manage account credentials in settings, and keep a tracked list of your own projects",
   "type": "module",
   "main": "index.js",

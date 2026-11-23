@@ -34,6 +34,14 @@ window.__ModuleLoader__.load({
     var FONT_BODY = 12;
     var FONT_HINT = 11;
 
+    /**
+     * Form controls follow the host settings panel's metrics so this panel does
+     * not look like a foreign object inside 设置: 13px text in a 34px box, which
+     * is what `ui-primitives` uses for every `SettingsValueField`.
+     */
+    var FONT_CONTROL = 13;
+    var CONTROL_HEIGHT = 34;
+
     var CARD_BORDER = '1px solid rgba(128,128,128,0.3)';
     var INPUT_BORDER = '1px solid rgba(128,128,128,0.3)';
     var DIVIDER_BORDER = '1px solid rgba(128,128,128,0.18)';
@@ -219,16 +227,19 @@ window.__ModuleLoader__.load({
     function inputStyle(extra) {
       var style = {
         fontFamily: 'inherit',
-        fontSize: FONT_BODY,
+        fontSize: FONT_CONTROL,
         lineHeight: 1.5,
         color: 'inherit',
         background: INPUT_BG,
         border: INPUT_BORDER,
-        borderRadius: 6,
-        padding: '5px 9px',
+        borderRadius: 8,
+        // `height` + zero vertical padding is what actually sets the box; a
+        // flex basis here would be read along the *column* axis by `Field`,
+        // which stretched every input into a 220px-tall slab.
+        height: CONTROL_HEIGHT,
+        padding: '0 12px',
         outline: 'none',
         minWidth: 0,
-        flex: '1 1 220px',
         boxSizing: 'border-box',
         width: '100%',
       };
@@ -238,10 +249,14 @@ window.__ModuleLoader__.load({
     function buttonStyle(variant, inactive) {
       var style = {
         fontFamily: 'inherit',
-        fontSize: FONT_BODY,
+        fontSize: FONT_CONTROL,
         lineHeight: 1.5,
-        padding: '5px 12px',
-        borderRadius: 6,
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: CONTROL_HEIGHT,
+        padding: '0 14px',
+        borderRadius: 8,
         border: INPUT_BORDER,
         background: 'transparent',
         color: 'inherit',
@@ -249,6 +264,7 @@ window.__ModuleLoader__.load({
         opacity: inactive ? 0.5 : 1,
         whiteSpace: 'nowrap',
         flex: '0 0 auto',
+        boxSizing: 'border-box',
       };
       if (variant === 'primary') style.background = 'rgba(128,128,128,0.18)';
       else if (variant === 'danger') style.color = DANGER;

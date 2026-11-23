@@ -636,6 +636,10 @@ try {
   process.stdout.write(`  FAIL uploader suite\n        ${/** @type {Error} */ (error)?.message}\n`)
 }
 
+// The settings panel is plain browser code, so its geometry guards are static
+// assertions on the style factories rather than rendered measurements.
+await import('./panel-styles.mjs')
+
 await rm(workDir, { recursive: true, force: true })
 
 process.stdout.write(`\n${passed} passed, ${failures.length} failed\n`)
