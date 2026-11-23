@@ -28,6 +28,16 @@ Two more things worth knowing:
 
 ## Install
 
+### From npm (recommended)
+
+Published on the public npm registry, so DSH resolves it by package name:
+
+```
+dsh plugin add dsh-pypi-flow
+```
+
+The same name works in the Plugin Manager's "add plugin" box. Current version: `0.1.1`.
+
 ### From the plugin market
 
 This repository ships a format-1 plugin market index:
@@ -53,14 +63,6 @@ Or from a shell:
 ```bash
 dsh plugin --profile web add github:zhang1024899756/dsh-pypi-flow
 ```
-
-### From npm (once published there)
-
-```bash
-dsh plugin --profile web add dsh-pypi-flow
-```
-
-Restart `dsh web` (or let it hot-reload). The panel appears under **Settings → PyPI** and the tools join the agent's tool list.
 
 ### Regenerating the market index
 

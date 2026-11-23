@@ -28,6 +28,16 @@ DeepSeek Harness 的 PyPI 工作流插件：查包、查版本、查名字、发
 
 ## 安装
 
+### 从 npm 安装（推荐）
+
+包已发布到 npm 公共注册表，DSH 可直接按包名解析：
+
+```bash
+dsh plugin add dsh-pypi-flow
+```
+
+在插件管理器的「添加插件」输入框里填同一个包名也可以。当前版本：`0.1.1`。
+
 ### 从插件市场安装
 
 本仓库自带一份符合 DSH 插件市场格式（format 1）的索引文件：
@@ -53,14 +63,6 @@ https://raw.githubusercontent.com/zhang1024899756/dsh-pypi-flow/main/market/inde
 ```bash
 dsh plugin --profile web add github:zhang1024899756/dsh-pypi-flow
 ```
-
-### 从 npm 安装（发布到 npm 后可用）
-
-```bash
-dsh plugin --profile web add dsh-pypi-flow
-```
-
-安装后重启 `dsh web`（或让它热重载），然后在 **设置 → PyPI** 看到面板，工具也会出现在 Agent 的工具列表里。
 
 ### 重新生成市场索引
 
