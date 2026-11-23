@@ -28,7 +28,21 @@ DeepSeek Harness 的 PyPI 工作流插件：查包、查版本、查名字、发
 
 ## 安装
 
-在 DSH 里（推荐，走插件管理器）：
+### 从插件市场安装
+
+本仓库自带一份符合 DSH 插件市场格式（format 1）的索引文件：
+
+```
+https://raw.githubusercontent.com/zhang1024899756/dsh-pypi-flow/main/market/index.json
+```
+
+在 DSH 的 **Discover** 页面把它添加为索引源，就能看到「PyPI 工作流」并直接安装。
+
+> DSH 没有公共官方索引，Discover 只显示你自己添加的索引源，所以这一步是必须的。
+
+### 从 GitHub 安装
+
+在 DSH 里：
 
 ```
 /plugin add github:zhang1024899756/dsh-pypi-flow
@@ -40,13 +54,26 @@ DeepSeek Harness 的 PyPI 工作流插件：查包、查版本、查名字、发
 dsh plugin --profile web add github:zhang1024899756/dsh-pypi-flow
 ```
 
-从 npm 安装（发布后可用）：
+### 从 npm 安装（发布到 npm 后可用）
 
 ```bash
 dsh plugin --profile web add dsh-pypi-flow
 ```
 
 安装后重启 `dsh web`（或让它热重载），然后在 **设置 → PyPI** 看到面板，工具也会出现在 Agent 的工具列表里。
+
+### 重新生成市场索引
+
+修改了 manifest 或显示信息（`locale/`、`icon.svg`）之后，用 DSH 源码里的官方生成器刷新索引：
+
+```bash
+# 在 DSH 源码 checkout 根目录执行
+echo "https://github.com/zhang1024899756/dsh-pypi-flow" > plugins.txt
+pnpm --filter @deepseek-ai/dsh-plugin-market-generator start \
+  --input plugins.txt --output market/index.json --title "Arvin DSH plugins"
+```
+
+生成器会用 `dsh-plugin-market-index` 校验每个条目，图标按需内联为 `data:` URL。
 
 ---
 

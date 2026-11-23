@@ -28,7 +28,21 @@ Two more things worth knowing:
 
 ## Install
 
-Through the plugin manager:
+### From the plugin market
+
+This repository ships a format-1 plugin market index:
+
+```
+https://raw.githubusercontent.com/zhang1024899756/dsh-pypi-flow/main/market/index.json
+```
+
+Add it as an index source on DSH's **Discover** page and "PyPI workflow" shows up there, installable in one click.
+
+> DSH has no public official index — Discover lists only the sources you add yourself, so this step is required.
+
+### From GitHub
+
+In DSH:
 
 ```
 /plugin add github:zhang1024899756/dsh-pypi-flow
@@ -40,13 +54,26 @@ Or from a shell:
 dsh plugin --profile web add github:zhang1024899756/dsh-pypi-flow
 ```
 
-From npm, once published:
+### From npm (once published there)
 
 ```bash
 dsh plugin --profile web add dsh-pypi-flow
 ```
 
 Restart `dsh web` (or let it hot-reload). The panel appears under **Settings → PyPI** and the tools join the agent's tool list.
+
+### Regenerating the market index
+
+After changing the manifest or display metadata (`locale/`, `icon.svg`), refresh the index with the official generator from a DSH source checkout:
+
+```bash
+# run from the checkout root
+echo "https://github.com/zhang1024899756/dsh-pypi-flow" > plugins.txt
+pnpm --filter @deepseek-ai/dsh-plugin-market-generator start \
+  --input plugins.txt --output market/index.json --title "Arvin DSH plugins"
+```
+
+The generator validates every entry with `dsh-plugin-market-index` and inlines icons as `data:` URLs when small enough.
 
 ---
 
