@@ -32,6 +32,15 @@
       },
       "versions": [
         {
+          "version": "0.1.1",
+          "publishTimestamp": 1795449165,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/zhang1024899756/dsh-pypi-flow",
+            "commit": "9906a9cb6cc3d28346be42b8809d81eeed5e6f04"
+          }
+        },
+        {
           "version": "0.1.0",
           "publishTimestamp": 1795446688,
           "source": {
